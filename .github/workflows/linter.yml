@@ -1,0 +1,22 @@
+name: Code Health Check
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  validate-codebase:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Validate HTML structure
+        run: |
+          grep -q "</body>" index.html || (echo "Malformed HTML structure" && exit 1)
+
+      - name: Basic JS Syntax Check
+        run: |
+          node --check script.js
