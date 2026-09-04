@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Steganography Tool</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Image Steganography</h1>
+        
+        <div class="card">
+            <h2>1. Select Image</h2>
+            <input type="file" id="imageInput" accept="image/*">
+            <div class="preview-area">
+                <canvas id="canvas"></canvas>
+            </div>
+        </div>
+
+        <div class="actions">
+            <div class="card">
+                <h2>Hide Message</h2>
+                <textarea id="secretMessage" placeholder="Enter secret message here..."></textarea>
+                <button id="encodeBtn">Encode & Download</button>
+            </div>
+
+            <div class="card">
+                <h2>Extract Message</h2>
+                <button id="decodeBtn">Decode Message From Image</button>
+                <textarea id="decodedMessage" placeholder="Extracted message will appear here..." readonly></textarea>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
